@@ -39,7 +39,7 @@ recognition.onend = function(){
 
 btn_start.addEventListener("click", ()=>{
     recognition.start();
-    btn_start.parentNode.removeChild(btn_start);
+    /* btn_start.parentNode.removeChild(btn_start); */
 })
 
 /* document.querySelector("#stop").addEventListener("click", ()=>{
