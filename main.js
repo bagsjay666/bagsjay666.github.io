@@ -29,7 +29,8 @@ recognition.onresult = function (event){
     for(let i=0;i<event.results.length; i++){
         textResult += event.results[i][0].transcript;
     };
-    textarea.innerHTML = textResult;
+    textarea.innerText = textResult;
+    textarea.scrollTop = textarea.scrollHeight;
 };
 
 recognition.onend = function(){
