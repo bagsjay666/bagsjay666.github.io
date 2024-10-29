@@ -2,6 +2,7 @@ if(! "webkitSpeechRecognition" in window){
     alert("not avaliable");
 };
 
+const btn_start = document.querySelector("#btn-start");
 const textarea = document.querySelector("#textarea");
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -35,10 +36,11 @@ recognition.onend = function(){
     recognition.start();
 };
 
-document.querySelector("#start").addEventListener("click", ()=>{
+btn_start.addEventListener("click", ()=>{
     recognition.start();
+    btn_start.parentNode.removeChild(btn_start);
 })
 
-document.querySelector("#stop").addEventListener("click", ()=>{
+/* document.querySelector("#stop").addEventListener("click", ()=>{
     recognition.stop();
-})
+}) */
