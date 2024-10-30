@@ -35,6 +35,7 @@ recognition.onresult = function (event){
 
 recognition.onend = function(){
     recognition.start();
+    console.log("restarted");
 };
 
 btn_start.addEventListener("click", ()=>{
