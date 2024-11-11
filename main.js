@@ -40,22 +40,26 @@ recognition.onresult = function (event){
     };
 };
 
-recognition.onend = function(){
+let onend_func = function(){
     recognition.start();
     console.log("restarted");
+};
+
+recognition.onend = function(){
+    if(typeof onend_func === 'function'){
+        onend_func();
+    };
 };
 
 btn_start.addEventListener("click", ()=>{
     console.log("started");
     recognition.start();
-    /* btn_start.parentNode.removeChild(btn_start); */
 });
 
 btn_stop.addEventListener("click", ()=>{
-    console.log("forced to stop printing text");
+    console.log("aborted, everything will be cleaned");
     printtext = undefined;
-});
-
-/* document.querySelector("#stop").addEventListener("click", ()=>{
+    onend_func = undefined;
     recognition.stop();
-}) */
+    document.body.innerHTML = '';
+});
