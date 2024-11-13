@@ -2,6 +2,7 @@ if(! "webkitSpeechRecognition" in window){
     alert("not avaliable");
 };
 
+const lang_opt = document.querySelector("#language-option");
 const btn_start = document.querySelector("#btn-start");
 const btn_stop = document.querySelector("#btn-stop");
 const textarea = document.querySelector("#textarea");
@@ -52,6 +53,8 @@ recognition.onend = function(){
 };
 
 btn_start.addEventListener("click", ()=>{
+    recognition.lang = lang_opt.value;
+    console.log(langopt.value);
     console.log("started");
     recognition.start();
 });
