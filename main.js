@@ -54,7 +54,7 @@ recognition.onend = function(){
 
 btn_start.addEventListener("click", ()=>{
     recognition.lang = lang_opt.value;
-    console.log(langopt.value);
+    console.log(lang_opt.value);
     console.log("started");
     recognition.start();
 });
